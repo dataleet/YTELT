@@ -2,7 +2,7 @@ from datetime import timedelta, datetime
 
 def parse_duration(duration_str):
     
-    duration_str = duration_str.replace('P',"").replace("!","")
+    duration_str = duration_str.replace('P',"").replace("T","")
 
     components = ['D', 'H', 'M', 'S']
     values = {'D':0, 'H':0, 'M':0, 'S':0}
@@ -24,6 +24,6 @@ def transform_data(row):
 
     row['Duration'] = (datetime.min + duration_td).time()
 
-    row['Video_type'] = 'Shorts' if duration_td.total_seconds() <= 60 else 'Normal'
+    row['Video_Type'] = 'Shorts' if duration_td.total_seconds() <= 60 else 'Normal'
 
     return row
