@@ -18,7 +18,7 @@ def parse_duration(duration_str):
 
     return total_duration
 
-def tansform_data(row):
+def transform_data(row):
 
     duration_td  = parse_duration(row['Duration'])
 
